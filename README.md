@@ -1,4 +1,20 @@
-# hs-chargemaster
+hs-chargemaster
+===============
+
+An exploration of procedure costs from published hospital chargemaster lists.
+
+## About
+
+The Centers for Medicare and Medicaid Services [released a new rule](https://www.cms.gov/newsroom/press-releases/cms-finalizes-changes-empower-patients-and-reduce-administrative-burden) to help improve access to hospital pricing.  Hospitals are now required to post their chargemaster lists on their websites in a machine-readable format.  We are looking to explore the opportunities with the aggregation, normalization, and distribution of these procedure price lists.
+
+## Challenges and Risks
+
+There are some possible challenges that have come up during the initial investigation.  This is a list of possible challenges and risks that will affect the outcome of this exploration.
+
+- Not every hospital disclose the CPT code for us to match each one
+- Hospitals may use different description (and with abbreviations), so it would be hard for us to equate each one between hospital
+- Is average charge really something that is useful?  i.e. insurance-pay can be 6x or more than self-pay
+- CMS may have more completed data we can use?
 
 ## Contributing
 
