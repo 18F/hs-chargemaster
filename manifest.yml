@@ -1,0 +1,13 @@
+---
+applications:
+- name: hs-chargemaster-app
+  buildpack: python_buildpack
+  memory: 512M
+  path: .
+  stack: cflinuxfs2
+  timeout: 180
+  routes:
+  - route: hs-chargemaster.app.cloud.gov
+  instances: 1
+  services:
+  - hs-chargemaster-database

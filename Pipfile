@@ -4,8 +4,27 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "*"
+yapf = "*"
+django-debug-toolbar = "*"
+pytest = "*"
+v = {editable = true,version = "*"}
+pytest-django = "*"
 
 [packages]
+django = "*"
+djangorestframework = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
+cfenv = "*"
+gunicorn = "*"
+gevent = "*"
 
 [requires]
 python_version = "3.6"
+
+[scripts]
+develop = "python manage.py runserver"
+format = "yapf -r -i chargemaster"
+makemigrations = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
