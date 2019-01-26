@@ -48,7 +48,7 @@ jobs:
       - run:
           name: run tests
           environment:
-            DATABASE_URL: "postgres://circleci@localhost:5432/chargemaster-test"
+            DATABASE_URL: "postgres://circleci@localhost:5432/hs-chargemaster-test"
             DJANGO_SETTINGS_MODULE: "chargemaster.settings.test"
           command: |
             pipenv run migrate
