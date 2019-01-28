@@ -2,7 +2,7 @@
 applications:
 - name: hs-chargemaster-app
   buildpack: python_buildpack
-  memory: 256M
+  memory: 128M
   path: .
   stack: cflinuxfs2
   timeout: 180
