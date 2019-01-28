@@ -19,6 +19,8 @@ dj-database-url = "*"
 cfenv = "*"
 gunicorn = "*"
 gevent = "*"
+django-cors-headers = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"

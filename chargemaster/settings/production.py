@@ -13,6 +13,7 @@ SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 
+STATIC_ROOT = '/app/chargemaster/static/'
 STATIC_URL = '/static/'
 
 rds = env.get_service(label='aws-rds')

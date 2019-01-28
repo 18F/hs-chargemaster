@@ -2,13 +2,16 @@ import os
 from django.utils.crypto import get_random_string
 from .env import env
 
-DEBUG = True
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = env.get_credential('DJANGO_SECRET_KEY', get_random_string(50))
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+PROJECT_NAME = 'hs-chargemaster'
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# Application definition
+# You'll want to set this to your Agency name
+AGENCY = PROJECT_NAME
+
+DATABASES = {}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -17,12 +20,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'chargemaster.api',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -32,6 +37,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'chargemaster.urls'
+
+SECRET_KEY = env.get_credential('DJANGO_SECRET_KEY', get_random_string(50))
 
 TEMPLATES = [
     {
@@ -50,8 +57,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chargemaster.wsgi.application'
-
-DATABASES = {}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -79,13 +84,10 @@ REST_FRAMEWORK = {
 }
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'US/Eastern'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
